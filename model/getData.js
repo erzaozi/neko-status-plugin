@@ -6,7 +6,7 @@ import { getSysInfo } from "../components/System.js"
 import { getGpuInfo } from "../components/GPU.js"
 import { getPluginNumInfo } from "../components/Plugin.js"
 import Version from "../components/Version.js"
-import formatTime from "../utils/formattime.js"
+import formatTime from "../utils/formatTime.js"
 import Config from "../components/Config.js"
 
 export default new class getData {
