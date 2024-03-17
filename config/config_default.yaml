@@ -1,0 +1,2 @@
+use_template: 'default'
+headimg_url: 'https://api.miaomc.cn/image/get'
