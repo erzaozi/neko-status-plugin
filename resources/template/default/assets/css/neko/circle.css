@@ -1,0 +1,10 @@
+.circle-progress {
+  --progress: 0;
+  --color: black;
+}
+
+.circle-progress .circle-progress-bar {
+  stroke-dasharray: 612.3, 612.3;
+  stroke-dashoffset: calc(612.3 * (1 - var(--progress)));
+  stroke: var(--color);
+}

@@ -1,0 +1,147 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{pluginResources}}/template/default/assets/css/neko/circle.css" />
+    <link rel="stylesheet" href="{{pluginResources}}/template/default/assets/css/neko/font.css" />
+    <link rel="stylesheet" href="{{pluginResources}}/template/default/assets/css/neko/style.css" />
+    <title>neko_status</title>
+  </head>
+  <body>
+    <div id="app">
+      <img class="__cover" src="{{data.HeadImage}}">
+      <div id="background-page">
+        <div class="__title">
+          <span class="__title-text" id="config_name">{{data.BotName}}</span>
+          <div class="__title-type" id="bot_version">{{data.BotVersion}}</div>
+          <img class="__title-image" src="{{pluginResources}}/template/default/assets/image/neko.png" />
+        </div>
+        <ul class="__dashboard" id="config_dashboard">
+          <li
+                class="__dashboard-block __cpu"
+                style="--block-color: var(--main-color)"
+                >
+                <svg
+                    width="102"
+                    height="102"
+                    viewBox="0 0 200 200"
+                    class="__dashboard-block__progress circle-progress"
+                    style="--progress: {{data.Dashboard.cpu.progress}}; --color: var(--block-color)"
+                >
+                    <circle
+                    class="circle-progress-bar"
+                    stroke-linecap="round"
+                    cx="100"
+                    cy="100"
+                    r="94"
+                    fill="none"
+                    transform="rotate(-93.8 100 100)"
+                    stroke-width="12"
+                    />
+                </svg>
+                <div class="__dashboard-block__info">
+                    <p class="__dashboard-block__info__value">{{data.Dashboard.cpu.text}}</p>
+                </div>
+          </li>
+          <li
+                class="__dashboard-block __ram"
+                style="--block-color: #ffb3cc"
+                >
+                <svg
+                    width="102"
+                    height="102"
+                    viewBox="0 0 200 200"
+                    class="__dashboard-block__progress circle-progress"
+                    style="--progress: {{data.Dashboard.memory.progress}}; --color: var(--block-color)"
+                >
+                    <circle
+                    class="circle-progress-bar"
+                    stroke-linecap="round"
+                    cx="100"
+                    cy="100"
+                    r="94"
+                    fill="none"
+                    transform="rotate(-93.8 100 100)"
+                    stroke-width="12"
+                    />
+                </svg>
+                <div class="__dashboard-block__info">
+                    <p class="__dashboard-block__info__value">{{data.Dashboard.memory.text}}</p>
+                </div>
+            </li>
+            <li
+                class="__dashboard-block __network"
+                style="--block-color: #fcaa93"
+                >
+                <svg
+                    width="102"
+                    height="102"
+                    viewBox="0 0 200 200"
+                    class="__dashboard-block__progress circle-progress"
+                    style="--progress: {{data.Dashboard.network.progress}}; --color: var(--block-color)"
+                >
+                    <circle
+                    class="circle-progress-bar"
+                    stroke-linecap="round"
+                    cx="100"
+                    cy="100"
+                    r="94"
+                    fill="none"
+                    transform="rotate(-93.8 100 100)"
+                    stroke-width="12"
+                    />
+                </svg>
+                <div class="__dashboard-block__info">
+                    <p class="__dashboard-block__info__value">{{data.Dashboard.network.text}}</p>
+                </div>
+            </li>
+            <li
+                class="__dashboard-block __disk"
+                style="--block-color: #b7a89e"
+                >
+                <svg
+                    width="102"
+                    height="102"
+                    viewBox="0 0 200 200"
+                    class="__dashboard-block__progress circle-progress"
+                    style="--progress: {{data.Dashboard.disk.progress}}; --color: var(--block-color)"
+                >
+                    <circle
+                    class="circle-progress-bar"
+                    stroke-linecap="round"
+                    cx="100"
+                    cy="100"
+                    r="94"
+                    fill="none"
+                    transform="rotate(-93.8 100 100)"
+                    stroke-width="12"
+                    />
+                </svg>
+                <div class="__dashboard-block__info">
+                    <p class="__dashboard-block__info__value">{{data.Dashboard.disk.text}}</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="__information" id="config_information">
+          <li class="__information-block">
+            <span class="__information-block__key">{{data.Info.cpu.key}}</span>
+            <span class="__information-block__value">{{data.Info.cpu.value}}</span>
+          </li>
+          <li class="__information-block">
+            <span class="__information-block__key">{{data.Info.system.key}}</span>
+            <span class="__information-block__value">{{data.Info.system.value}}</span>
+          </li>
+          <li class="__information-block">
+            <span class="__information-block__key">{{data.Info.gpu.key}}</span>
+            <span class="__information-block__value">{{data.Info.gpu.value}}</span>
+          </li>
+          <li class="__information-block">
+            <span class="__information-block__key">{{data.Info.plugin.key}}</span>
+            <span class="__information-block__value">{{data.Info.plugin.value}}</span>
+          </li>
+        </ul>
+        <p class="__footer" id="config_footer">{{data.Runtime}}</p>
+      </div>
+    </div>
+  </body>
+</html>

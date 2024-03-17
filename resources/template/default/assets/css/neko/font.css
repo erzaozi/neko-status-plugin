@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "HachiMaruPop";
+  src: url(../../font/HachiMaruPop-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gugi";
+  src: url(../../font/Gugi-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Hinted";
+  src: url(../../font/hinted-RosaSans-Bold.ttf) format("truetype");
+}
