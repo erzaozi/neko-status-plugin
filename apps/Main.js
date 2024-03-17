@@ -19,7 +19,8 @@ export class neko_status extends plugin {
           /** 命令正则匹配 */
           reg: '^[/#]?(状态|status)$',
           /** 执行方法 */
-          fnc: 'status'
+          fnc: 'status',
+          permission: 'master'
         }
       ]
     })
