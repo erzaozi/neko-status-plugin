@@ -1,5 +1,6 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import Config from '../components/Config.js'
+import Init from '../model/init.js'
 
 export class neko_header extends plugin {
   constructor() {
