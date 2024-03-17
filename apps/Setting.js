@@ -28,6 +28,10 @@ export class neko_header extends plugin {
     let url = e.msg.replace(/^[/#]?更换状态头图/, '').trim();
     let imageUrl;
 
+    if (e.img) {
+      imageUrl = e.img[0];
+    }
+
     if (e.source) {
       const history = e.isGroup 
         ? await e.group.getChatHistory(e.source.seq, 1) 
@@ -47,11 +51,6 @@ export class neko_header extends plugin {
       return false;
     }
 
-    if (!url && !imageUrl) {
-      e.reply('请提供图片链接或者附带图片');
-      return false;
-    }
-
     url = url || imageUrl;
 
     if (url) {
@@ -59,7 +58,7 @@ export class neko_header extends plugin {
       await Config.setConfig(config);
       e.reply('设置成功');
     } else {
-      e.reply('设置失败');
+      e.reply('无法获取到图片');
       return false;
     }
   }
