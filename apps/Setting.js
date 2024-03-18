@@ -17,7 +17,9 @@ export class neko_header extends plugin {
           /** 命令正则匹配 */
           reg: '^[/#]?更换状态头图.*$',
           /** 执行方法 */
-          fnc: 'header'
+          fnc: 'header',
+          /** 主人权限 */
+          permission: 'master'
         }
       ]
     })
