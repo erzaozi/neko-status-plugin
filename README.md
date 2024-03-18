@@ -39,6 +39,8 @@ pnpm install --filter=neko-status-plugin
 
 ## 😻 效果图
 
+**如果使用过程中出现错位问题可以加群 `551081559` 反馈问题**
+
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/a578e8d9-68b9-4af9-9ebb-82784afd318a" height="500" alt="renderings"/>
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/658a8768-67f8-4c9d-8f61-6cf90f0b6a68" height="500" alt="renderings"/>
 
