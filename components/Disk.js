@@ -30,7 +30,7 @@ export async function getDiskUsageCircle() {
     try {
       const { fsSize } = await systemInformation.get({ fsSize: 'fs,use,used,size' });
   
-      const disk = fsSize.find(d => os.platform() === 'win32' ? pluginRoot.startsWith(d.fs) : pluginRoot.startsWith('/'));
+      const disk = fsSize.find(d => os.platform() === 'win32' ? pluginRoot.startsWith(d.fs) : d.fs.startsWith('/'));
   
       if (!disk) {
         throw new Error('无法找到含有插件根目录的磁盘');
