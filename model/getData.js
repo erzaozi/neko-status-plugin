@@ -48,6 +48,7 @@ export default new class getData {
 
         const data = {
             "BotVersion": Version.isMiao ? 'Miao-Yunzai' : Version.isTrss ? 'TRSS-Yunzai' : 'Yunzai',
+            "BotAvatar": Bot.nickname || e.bot.avatar,
             "BotName": Bot.nickname || e.bot.nickname || 'Shizuku',
             "HeadImage": await Config.getConfig().headimg_url,
             "Dashboard": dashboardData,

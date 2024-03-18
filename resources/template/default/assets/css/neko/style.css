@@ -26,6 +26,18 @@
   box-sizing: border-box;
 }
 
+#background-page #__bot-avatar {
+  position: absolute;
+  left: 60px;
+  top: 444px;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  outline: rgba(245, 245, 243, 0.8) solid 10px;
+  box-sizing: border-box;
+  background-size: 100% 100%;
+}
+
 #background-page .__title {
   display: flex;
   flex-direction: row;
@@ -103,7 +115,8 @@
   flex: 1;
 }
 
-#background-page .__information-block__key, #background-page .__information-block__value {
+#background-page .__information-block__key,
+#background-page .__information-block__value {
   line-height: 42px;
   font-size: 28px;
   font-family: "Gugi";
