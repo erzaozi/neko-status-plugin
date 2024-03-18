@@ -48,7 +48,7 @@ export default new class getData {
 
         const data = {
             "BotVersion": Version.isMiao ? 'Miao-Yunzai' : Version.isTrss ? 'TRSS-Yunzai' : 'Yunzai',
-            "BotAvatar": Bot.nickname || e.bot.avatar,
+            "BotAvatar": Bot.avatar || e.bot.avatar || 'https://q1.qlogo.cn/g?b=qq&s=0&nk=10001',
             "BotName": Bot.nickname || e.bot.nickname || 'Shizuku',
             "HeadImage": await Config.getConfig().headimg_url,
             "Dashboard": dashboardData,
