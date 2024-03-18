@@ -28,25 +28,23 @@ function formatSizeUnits(bytes) {
  */
 export async function getDiskUsageCircle() {
     try {
-        const info = await systemInformation.get({
-            fsSize: 'fs,use,used,size'
-        });
-
-        let disk = info.fsSize.find(d => pluginRoot.startsWith(d.fs));
-
-        if (!disk) {
-            throw new Error('无法找到含有插件根目录的磁盘');
-        }
-
-        return {
-            text: `${formatSizeUnits(disk.used)} / ${formatSizeUnits(disk.size)}`,
-            progress: disk.use / 100,
-        };
+      const { fsSize } = await systemInformation.get({ fsSize: 'fs,use,used,size' });
+  
+      const disk = fsSize.find(d => os.platform() === 'win32' ? pluginRoot.startsWith(d.fs) : pluginRoot.startsWith('/'));
+  
+      if (!disk) {
+        throw new Error('无法找到含有插件根目录的磁盘');
+      }
+  
+      return {
+        text: `${formatSizeUnits(disk.used)} / ${formatSizeUnits(disk.size)}`,
+        progress: disk.use / 100
+      };
     } catch (error) {
-        console.error('获取磁盘圈形图信息时出错:', error);
-        return {
-            text: "获取磁盘信息失败",
-            progress: 0
-        };
+      console.error('获取磁盘信息时出错:', error);
+      return {
+        text: "获取磁盘信息失败",
+        progress: 0
+      };
     }
-}
+  }
