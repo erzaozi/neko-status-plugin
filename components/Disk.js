@@ -1,5 +1,6 @@
 import systemInformation from 'systeminformation';
 import { pluginRoot } from "../model/path.js";
+import os from 'os';
 
 /**
  * 转换字节大小为更易读的格式（KB, MB, GB 等）
