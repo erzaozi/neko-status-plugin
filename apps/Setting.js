@@ -86,21 +86,21 @@ export class neko_header extends plugin {
     let template = e.msg.replace(/^[/#]?更换状态模板/, '').trim();
 
     let templateOptions = await Config.getTemplate();
-    let templateList = templateOptions.map(val => val.label);
+    let templateList = templateOptions.map(val => val.value);
 
     if (templateList.indexOf(template) === -1) {
-      e.reply('模板不存在，请发送“状态模板列表”查看所有模板');
+      e.reply('模板不存在，请发送“#状态模板列表”查看所有模板');
       return false;
     }
 
-    config.template = template;
+    config.use_template = template;
     await Config.setConfig(config);
-    e.reply('设置成功');
+    e.reply('设置成功，当前状态模板：' + template);
   }
 
   async templateList(e) {
     let templateOptions = await Config.getTemplate();
-    let templateList = templateOptions.map(val => val.label);
+    let templateList = templateOptions.map(val => val.value);
     e.reply('状态模板列表：\n' + templateList.join('\n'));
     return true;
   }
