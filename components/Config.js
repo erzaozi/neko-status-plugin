@@ -1,6 +1,6 @@
 import YAML from 'yaml'
 import fs from 'fs'
-import { pluginRoot } from '../model/path.js'
+import { pluginRoot, pluginResources } from '../model/path.js'
 import Log from '../utils/logs.js'
 
 class Config {
@@ -38,6 +38,20 @@ class Config {
     } catch (err) {
       Log.e('写入config.yaml失败', err)
       return false
+    }
+  }
+
+  getTemplate() {
+    try {
+      const template = fs.readdirSync(`${pluginResources}/template`)
+      let templateOptions = []
+      template.forEach((item) => {
+        templateOptions.push({ label: item + '模板', value: item })
+      })
+      return templateOptions
+    } catch (err) {
+      Log.e('读取template失败', err)
+      return [{ label: '读取失败', value: 'default' }]
     }
   }
 }

@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:root {
+  width: 963px;
+  height: 1872px;
+  --main-color: #54adff;
+}
+
+.__cover {
+  position: absolute;
+  width: 963px;
+  height: 768px;
+  object-fit: cover;
+  z-index: -2;
+}
+
+#background-page {
+  width: 963px;
+  height: 1872px;
+  background-image: url(../../image/neko.png);
+  padding: 636px 64px 65px;
+  box-sizing: border-box;
+}
+
+#background-page .__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#background-page .__title-text {
+  font-family: "HachiMaruPop";
+  font-size: 50px;
+  line-height: 58px;
+  color: var(--main-color);
+  -webkit-text-stroke: 1px var(--main-color);
+}
+
+#background-page .__title-type {
+  width: 280px;
+  height: 58px;
+  font-size: 35px;
+  line-height: 58px;
+  color: white;
+  text-align: center;
+  background-color: #54adff;
+  border-radius: 100px;
+  margin-left: 20px;
+  font-family: "Hinted";
+}
+
+#background-page .__dashboard {
+  margin-top: 94px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#background-page .__dashboard-block {
+  --block-color: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#background-page .__dashboard-block__info {
+  margin-left: 30px;
+  flex: 1;
+}
+
+#background-page .__dashboard-block__info__value {
+  margin-top: 42px;
+  font-size: 45px;
+  font-family: "Gugi";
+  line-height: 56px;
+  color: var(--block-color);
+}
+
+#background-page .__information {
+  margin-top: 135px;
+  padding: 0 30px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#background-page .__information-block {
+  display: flex;
+  flex-direction: row;
+}
+
+#background-page .__information-block__key {
+  width: 185px;
+}
+
+#background-page .__information-block__value {
+  flex: 1;
+}
+
+#background-page .__information-block__key, #background-page .__information-block__value {
+  line-height: 42px;
+  font-size: 28px;
+  font-family: "Gugi";
+  color: #b7a89e;
+}
+
+#background-page .__footer {
+  margin-top: 90px;
+  font-family: "HachiMaruPop";
+  font-size: 22px;
+  text-align: right;
+  color: #b7a89e;
+  -webkit-text-stroke: 0.5px #b7a89e;
+}

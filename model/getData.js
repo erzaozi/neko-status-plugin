@@ -46,6 +46,8 @@ export default new class getData {
             this.getInfoData()
         ]);
 
+        const bot = e.bot || Bot;
+
         const data = {
             "BotVersion": Version.isMiao ? 'Miao-Yunzai' : Version.isTrss ? 'TRSS-Yunzai' : 'Yunzai',
             "BotAvatar": Bot.avatar || e.bot.avatar || 'https://q1.qlogo.cn/g?b=qq&s=0&nk=10001',

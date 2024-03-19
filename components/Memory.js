@@ -13,7 +13,7 @@ function formatSizeUnits(bytes) {
     } else if (bytes >= 1024) {
         return (bytes / 1024).toFixed(2) + ' KB';
     } else if (bytes > 1) {
-        return bytes.toFixed(2) + ' bytes';
+        return bytes.toFixed(2) + ' B';
     } else if (bytes === 1) {
         return bytes + ' byte';
     } else {

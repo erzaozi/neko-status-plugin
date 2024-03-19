@@ -20,6 +20,22 @@ export class neko_header extends plugin {
           fnc: 'header',
           /** 主人权限 */
           permission: 'master'
+        },
+        {
+          /** 命令正则匹配 */
+          reg: '^[/#]?更换状态模板.*$',
+          /** 执行方法 */
+          fnc: 'template',
+          /** 主人权限 */
+          permission: 'master'
+        },
+        {
+          /** 命令正则匹配 */
+          reg: '^[/#]?状态模板列表.*$',
+          /** 执行方法 */
+          fnc: 'templateList',
+          /** 主人权限 */
+          permission: 'master'
         }
       ]
     })
@@ -63,6 +79,30 @@ export class neko_header extends plugin {
       e.reply('无法获取到图片');
       return false;
     }
+  }
+
+  async template(e) {
+    const config = await Config.getConfig();
+    let template = e.msg.replace(/^[/#]?更换状态模板/, '').trim();
+
+    let templateOptions = await Config.getTemplate();
+    let templateList = templateOptions.map(val => val.label);
+
+    if (templateList.indexOf(template) === -1) {
+      e.reply('模板不存在，请发送“状态模板列表”查看所有模板');
+      return false;
+    }
+
+    config.template = template;
+    await Config.setConfig(config);
+    e.reply('设置成功');
+  }
+
+  async templateList(e) {
+    let templateOptions = await Config.getTemplate();
+    let templateList = templateOptions.map(val => val.label);
+    e.reply('状态模板列表：\n' + templateList.join('\n'));
+    return true;
   }
 }
 
