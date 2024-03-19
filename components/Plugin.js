@@ -34,7 +34,7 @@ export function getPluginNumInfo() {
         console.error('获取插件信息时出错:', error);
         return {
             key: 'Plugins',
-            value: "获取插件信息失败"
+            value: "0 plugin & 0 js loaded"
         };
     }
 }

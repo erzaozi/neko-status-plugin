@@ -18,7 +18,7 @@ export async function getSysInfo() {
     console.error('获取系统信息时出错:', error);
     return {
       key: 'System',
-      value: "获取系统信息失败"
+      value: "The Emperor's New System"
     };
   }
 }

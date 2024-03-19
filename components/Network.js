@@ -44,7 +44,7 @@ export async function getNetworkSpeed() {
   } catch (error) {
     console.error('获取网络速度时出错:', error);
     return {
-        text: '获取网络信息失败',
+        text: '↑ 0 B/s ↓ 0 B/s',
         progress: 0
     };
   }

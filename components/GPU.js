@@ -12,7 +12,7 @@ export async function getGpuInfo() {
       throw new Error('未找到GPU，请确认已安装显卡驱动');
     }
 
-    let gpu = graphics.controllers.find(({ memoryTotal, memoryUsed, utilizationGpu }) => memoryTotal && memoryUsed && utilizationGpu) || graphics.controllers[0];
+    let gpu = graphics.controllers.find(({ memoryTotal, memoryUsed, utilizationGpu }) => memoryTotal && memoryUsed && utilizationGpu) || { model: "The Emperor's New GPU"}
 
     const gpuModel = gpu.model.length > 36 ? `${gpu.model.slice(0, 36)}...` : gpu.model;
 
@@ -25,7 +25,7 @@ export async function getGpuInfo() {
 
     return {
       key: 'GPU',
-      value: "雜魚~不会连显卡都买不起吧~"
+      value: "The Emperor's New GPU"
     };
   }
 }

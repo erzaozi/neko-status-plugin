@@ -44,7 +44,7 @@ export async function getDiskUsageCircle() {
     } catch (error) {
       console.error('获取磁盘信息时出错:', error);
       return {
-        text: "获取磁盘信息失败",
+        text: "0 B / 0 B",
         progress: 0
       };
     }

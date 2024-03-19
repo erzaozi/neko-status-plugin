@@ -38,7 +38,7 @@ export async function getMemoryUsageCircle() {
     } catch (error) {
         console.error('获取内存圈形图信息时出错:', error);
         return {
-            text: "获取内存信息失败",
+            text: "0 B / 0 B",
             progress: 0
         };
     }
