@@ -1,50 +1,84 @@
-<div align="center">
-  
-# Neko-Status-Plugin
+![neko-status-plugin](https://socialify.git.ci/erzaozi/neko-status-plugin/image?description=1&font=Raleway&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
-</div>
+<img decoding="async" align=right src="resources/readme/girl.png" width="35%">
 
-![页面 1](https://github.com/erzaozi/neko-status-plugin/assets/61369914/14eca1b7-0a9b-47c1-8555-76479bf66b30)
+# NEKO-STATUS-PLUGIN 🍙
 
-## 😺 介绍
+- 一个适用于 [Yunzai 系列机器人框架](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) 的系统状态查询插件喵~
 
-Yunzai-Bot 服务器状态查看插件，查看机器人服务器状态
+- 有着更加精简，美观和超超超超超可爱的UI和的风格，并且你可以自定义头图喵~
 
-如果您是 [Koishi](https://koishi.chat/) 或者是 [NoneBot](https://nonebot.dev/) 用户，对应平台也有开发者制作了类似的插件：[koishi-plugin-status-pro](https://github.com/Kabuda-czh/koishi-plugin-status-pro)、[nonebot-plugin-kawaii-status](https://github.com/KomoriDev/nonebot-plugin-kawaii-status)
+- **使用中遇到问题请加QQ群咨询：[707331865](https://qm.qq.com/q/TXTIS9KhO2)**
 
-## 😼 安装
+> [!TIP]
+> 在看到 [Koishi](https://koishi.js.org/) 和 [Nonebot](https://nonebot.dev/) 类似风格的插件后，身为猫猫控我与 [CikeyQi](https://github.com/CikeyQi) 立马喜欢上了如此精美的设计，于是决定将这个插件移植到Yunzai上，并重新修改创作了模板加上了自定义头图，人家有的咱们也可以有喵~
 
-- 克隆本仓库至 plugins 目录
+## 安装插件 😺
+
+#### 1. 克隆仓库
+
 ```
 git clone https://github.com/erzaozi/neko-status-plugin.git ./plugins/neko-status-plugin
 ```
 
-- 安装依赖
+> [!NOTE]
+> 如果你的网络环境较差，无法连接到Github，可以使用 [GitHub Proxy](https://mirror.ghproxy.com/) 提供的文件代理加速下载服务
+> ```
+> git clone https://mirror.ghproxy.com/https://github.com/erzaozi/neko-status-plugin.git ./plugins/neko-status-plugin
+> ```
+
+#### 2. 安装依赖
+
 ```
 pnpm install --filter=neko-status-plugin
 ```
 
-## 🙀 配置
+## 插件配置 😼
 
-在项目的配置文件中添加下表中的可选配置
+> [!WARNING]
+> 非常不建议手动修改配置文件，本插件已兼容 [Guoba-plugin](https://github.com/guoba-yunzai/guoba-plugin) ，请使用锅巴插件对配置项进行修改
 
-| 配置项 | 默认值 | 说明 |
-| :---: | :---: | :---: |
-| use_template | `default` | 使用的状态模板 |
-| headimg_url | `https://api.miaomc.cn/image/get` | 使用的状态模板的图片，可以是静态图<br>也可以是图片API |
+- <details> <summary>修改自定义头图</summary>
 
-## 😸 使用
+    可在锅巴中填入自己想要的图床地址，也可以是本地资源喵~
 
-发送 `/status` 或 `#状态` 均可触发，发送 `#更换状态头图<url>` 即可更换状态模板内的图片
+  </details>
+
+- <details> <summary>更换无头像模板</summary>
+
+    可在锅巴选择是否要显示头像的模板喵~
+
+  </details>
+
+## 功能列表 🙀
+
+- [x] CPU占用
+- [x] 内存占用
+- [x] 网络上下行速率
+- [x] 机器人磁盘占用
+- [x] 系统信息
+- [x] GPU型号
+- [x] 插件数量
+- [x] 运行时间
 
 ## 😻 效果图
-
-**如果使用过程中出现错位问题可以加群 `551081559` 反馈问题**
 
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/6c99cbb7-16bf-4dcf-9f6b-9d99f5fac076" height="500" alt="renderings"/>
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/2b99c334-504c-4748-b079-21fd463eeb4c" height="500" alt="renderings"/>
 
+## 常见问题 😸
+1. 模板怎么错位了？
+   + 可能机器人名字过长。
 
-## 😽 鸣谢
+## 支持与贡献 😽
 
-[Kabuda-czh/koishi-plugin-status-pro](https://github.com/Kabuda-czh/koishi-plugin-status-pro)：插件内置的default模板来源
+如果你喜欢这个项目，请不妨点个 Star🌟，这是对开发者最大的动力， 当然，你可以对我 [爱发电](https://afdian.net/a/sumoqi) 赞助，呜咪~❤️
+
+有意见或者建议也欢迎提交 [Issues](https://github.com/erzaozi/neko-status-plugin/issues) 和 [Pull requests](https://github.com/erzaozi/neko-status-plugin/pulls)。
+
+## 相关项目 😻
+* [Kabuda-czh/koishi-plugin-status-pro](https://github.com/Kabuda-czh/koishi-plugin-status-pro)：插件内置的default模板来源
+* [KomoriDev/nonebot-plugin-kawaii-status](https://github.com/KomoriDev/nonebot-plugin-kawaii-status)
+
+## 许可证
+本项目使用 [GNU AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) 作为开源许可证。
