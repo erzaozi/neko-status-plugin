@@ -13,7 +13,7 @@
 > [!TIP]
 > 在看到 [Koishi](https://koishi.js.org/) 和 [Nonebot](https://nonebot.dev/) 类似风格的插件后，身为猫猫控我与 [CikeyQi](https://github.com/CikeyQi) 立马喜欢上了如此精美的设计，于是决定将这个插件移植到Yunzai上，并重新修改创作了模板加上了自定义头图，人家有的咱们也可以有喵~
 
-## 安装插件 😺
+## 安装插件
 
 #### 1. 克隆仓库
 
@@ -33,24 +33,12 @@ git clone https://github.com/erzaozi/neko-status-plugin.git ./plugins/neko-statu
 pnpm install --filter=neko-status-plugin
 ```
 
-## 插件配置 😼
+## 插件配置
 
 > [!WARNING]
 > 非常不建议手动修改配置文件，本插件已兼容 [Guoba-plugin](https://github.com/guoba-yunzai/guoba-plugin) ，请使用锅巴插件对配置项进行修改
 
-- <details> <summary>修改自定义头图</summary>
-
-    可在锅巴中填入自己想要的图床地址，也可以是本地资源喵~
-
-  </details>
-
-- <details> <summary>更换无头像模板</summary>
-
-    可在锅巴选择是否要显示头像的模板喵~
-
-  </details>
-
-## 功能列表 🙀
+## 功能列表
 
 - [x] CPU占用
 - [x] 内存占用
@@ -61,14 +49,16 @@ pnpm install --filter=neko-status-plugin
 - [x] 插件数量
 - [x] 运行时间
 
-## 😻 效果图
+## 效果图
 
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/6c99cbb7-16bf-4dcf-9f6b-9d99f5fac076" height="500" alt="renderings"/>
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/2b99c334-504c-4748-b079-21fd463eeb4c" height="500" alt="renderings"/>
 
-## 常见问题 😸
+## 常见问题
 1. 模板怎么错位了？
    + 可能机器人名字过长。
+2. 显示`The Emperor's New XXX` 是什么意思？
+   + 获取不到你的设备信息
 
 ## 支持与贡献 😽
 
@@ -77,8 +67,8 @@ pnpm install --filter=neko-status-plugin
 有意见或者建议也欢迎提交 [Issues](https://github.com/erzaozi/neko-status-plugin/issues) 和 [Pull requests](https://github.com/erzaozi/neko-status-plugin/pulls)。
 
 ## 相关项目 😻
-* [Kabuda-czh/koishi-plugin-status-pro](https://github.com/Kabuda-czh/koishi-plugin-status-pro)：插件内置的default模板来源
-* [KomoriDev/nonebot-plugin-kawaii-status](https://github.com/KomoriDev/nonebot-plugin-kawaii-status)
+* [Kabuda-czh/koishi-plugin-status-pro](https://github.com/Kabuda-czh/koishi-plugin-status-pro)
+* [KomoriDev/nonebot-plugin-kawaii-status](https://github.com/KomoriDev/nonebot-plugin-kawaii-status)：NoneBot2 服务器状态查看插件 / View server status for NoneBot2
 
 ## 许可证
 本项目使用 [GNU AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) 作为开源许可证。
