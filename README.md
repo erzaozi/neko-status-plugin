@@ -44,16 +44,19 @@ pnpm install --filter=neko-status-plugin
 - [x] CPU 占用
 - [x] 内存占用
 - [x] 网络上下行速率
-- [x] 机器人磁盘占用
+- [x] 磁盘占用
 - [x] 系统信息
 - [x] GPU 型号
 - [x] 插件数量
+- [x] 适配器信息
+- [x] 收发消息数量
+- [x] 好友 & 群数量
 - [x] 运行时间
 
 ## 效果图
 
-<img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/6c99cbb7-16bf-4dcf-9f6b-9d99f5fac076" height="500" alt="renderings"/>
-<img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/2b99c334-504c-4748-b079-21fd463eeb4c" height="500" alt="renderings"/>
+<img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/b606dc41-5c7c-4199-b3da-04d96be27370" height="500" alt="renderings"/>
+<img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/cf0b837e-70fb-47e8-9805-5b1ed44f751c" height="500" alt="renderings"/>
 
 ## 常见问题
 
