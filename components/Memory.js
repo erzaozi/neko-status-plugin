@@ -28,12 +28,12 @@ function formatSizeUnits(bytes) {
 export async function getMemoryUsageCircle() {
     try {
         const info = await systemInformation.get({
-            mem: 'total,used'
+            mem: 'total,active'
         });
 
         return {
-            text: `${formatSizeUnits(info.mem.used)} / ${formatSizeUnits(info.mem.total)}`,
-            progress: info.mem.used / info.mem.total
+            text: `${formatSizeUnits(info.mem.active)} / ${formatSizeUnits(info.mem.total)}`,
+            progress: info.mem.active / info.mem.total
         };
     } catch (error) {
         console.error('获取内存圈形图信息时出错:', error);
