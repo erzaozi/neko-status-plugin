@@ -6,7 +6,7 @@
 
 :root {
   width: 963px;
-  height: 1872px;
+  height: 1982px;
   --main-color: #54adff;
 }
 
@@ -20,7 +20,7 @@
 
 #background-page {
   width: 963px;
-  height: 1872px;
+  height: 1982px;
   background-image: url(../../image/neko.png);
   padding: 636px 64px 65px;
   box-sizing: border-box;

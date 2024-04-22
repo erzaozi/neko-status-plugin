@@ -43,3 +43,11 @@ export default function formatTime(time, format, repair = true) {
 
     return timeObj
 }
+
+export function formatNumber(num) {
+    if (num < 1000) return num
+    else if (num < 1000000) return Math.floor(num / 100) / 10 + 'k'
+    else if (num < 1000000000) return Math.floor(num / 100000) / 10 + 'm'
+    else if (num < 1000000000000) return Math.floor(num / 100000000) / 10 + 'g'
+    else return 'Infinity'
+}

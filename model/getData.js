@@ -5,6 +5,8 @@ import { getDiskUsageCircle } from "../components/Disk.js"
 import { getSysInfo } from "../components/System.js"
 import { getGpuInfo } from "../components/GPU.js"
 import { getPluginNumInfo } from "../components/Plugin.js"
+import { getAccountInfo } from "../components/Account.js"
+import { getAdapter } from "../components/Adapter.js"
 import Version from "../components/Version.js"
 import formatTime from "../utils/formatTime.js"
 import Config from "../components/Config.js"
@@ -25,25 +27,29 @@ export default new class getData {
         };
     }
 
-    async getInfoData() {
-        const [cpu, system, gpu, plugin] = await Promise.all([
+    async getInfoData(bot) {
+        const [cpu, system, gpu, plugin, adapter, account] = await Promise.all([
             getCpuModel(),
             getSysInfo(),
             getGpuInfo(),
-            getPluginNumInfo()
+            getPluginNumInfo(),
+            getAdapter(bot),
+            getAccountInfo(bot)
         ]);
         return {
             cpu,
             system,
             gpu,
-            plugin
+            plugin,
+            adapter,
+            account
         };
     }
 
     async getData(e) {
         const [dashboardData, infoData] = await Promise.all([
             this.getDashboardData(),
-            this.getInfoData()
+            this.getInfoData(e.bot)
         ]);
 
         const bot = e.bot || Bot;
