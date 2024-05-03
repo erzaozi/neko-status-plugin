@@ -10,6 +10,7 @@ import { getAdapter } from "../components/Adapter.js"
 import Version from "../components/Version.js"
 import formatTime from "../utils/formatTime.js"
 import Config from "../components/Config.js"
+import fetch from "node-fetch"
 
 export default new class getData {
     async getDashboardData() {
@@ -46,6 +47,19 @@ export default new class getData {
         };
     }
 
+    async getHeadImage() {
+        const url = Config.getConfig().headimg_url
+        try {
+            new URL(url);
+            let response = await fetch(url)
+            const arraybuffer = await response.arrayBuffer()
+            let base64 = Buffer.from(arraybuffer).toString('base64')
+            return 'data:image/png;base64,' + base64
+        } catch (e) {
+            return url
+        }
+    }
+
     async getData(e) {
         const [dashboardData, infoData] = await Promise.all([
             this.getDashboardData(),
@@ -57,8 +71,8 @@ export default new class getData {
         const data = {
             "BotVersion": Version.isMiao ? 'Miao-Yunzai' : Version.isTrss ? 'TRSS-Yunzai' : 'Yunzai',
             "BotAvatar": bot.avatar || await bot.pickFriend(bot.uin).getAvatarUrl?.() || `https://q1.qlogo.cn/g?b=qq&s=0&nk=${bot.uin}`,
-            "BotName": bot.nickname.substring(0, 10) || 'Shizuku',
-            "HeadImage": await Config.getConfig().headimg_url,
+            "BotName": bot.nickname?.substring(0, 10) || 'Shizuku',
+            "HeadImage": await this.getHeadImage(),
             "Dashboard": dashboardData,
             "Info": infoData,
             "Runtime": formatTime(Date.now() / 1000 - Bot.stat?.start_time, 'Bot已运行dd天hh小时mm分钟', false)
