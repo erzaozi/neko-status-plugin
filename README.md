@@ -41,6 +41,8 @@ pnpm install --filter=neko-status-plugin
 
 ## 功能列表
 
+安装好后，请使用 `#状态` 或 `/status` 命令触发状态面板
+
 - [x] CPU 占用
 - [x] 内存占用
 - [x] 网络上下行速率
