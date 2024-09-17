@@ -7,6 +7,7 @@ import { getGpuInfo } from "../components/GPU.js"
 import { getPluginNumInfo } from "../components/Plugin.js"
 import { getAccountInfo } from "../components/Account.js"
 import { getAdapter } from "../components/Adapter.js"
+import { getShell } from "../components/Shell.js"
 import Version from "../components/Version.js"
 import formatTime from "../utils/formatTime.js"
 import Config from "../components/Config.js"
@@ -29,13 +30,14 @@ export default new class getData {
     }
 
     async getInfoData(bot) {
-        const [cpu, system, gpu, plugin, adapter, account] = await Promise.all([
+        const [cpu, system, gpu, plugin, adapter, account, shell] = await Promise.all([
             getCpuModel(),
             getSysInfo(),
             getGpuInfo(),
             getPluginNumInfo(),
             getAdapter(bot),
-            getAccountInfo(bot)
+            getAccountInfo(bot),
+            getShell()
         ]);
         return {
             cpu,
@@ -43,7 +45,8 @@ export default new class getData {
             gpu,
             plugin,
             adapter,
-            account
+            account,
+            shell
         };
     }
 

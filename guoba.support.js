@@ -43,6 +43,35 @@ export function supportGuoba() {
             placeholder: '图片地址，请自行测试是否有效',
           },
         },
+        {
+          field: "shell",
+          label: "自定义展示内容",
+          bottomHelpMessage: "自定义展示内容",
+          component: "GSubForm",
+          componentProps: {
+            multiple: true,
+            schemas: [
+              {
+                field: "name",
+                label: "自定义展示内容名",
+                component: "Input",
+                required: true,
+                componentProps: {
+                  placeholder: '请输入展示内容名',
+                },
+              },
+              {
+                field: "command",
+                label: "shell命令",
+                component: "Input",
+                required: true,
+                componentProps: {
+                  placeholder: '请输入展示内容名',
+                },
+              },
+            ],
+          },
+        },
       ],
       getConfigData() {
         let config = Config.getConfig()

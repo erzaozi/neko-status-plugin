@@ -121,32 +121,40 @@
                 </div>
             </li>
         </ul>
-        <ul class="__information" id="config_information">
-          <li class="__information-block">
-            <span class="__information-block__key">{{data.Info.cpu.key}}</span>
-            <span class="__information-block__value">{{data.Info.cpu.value}}</span>
-          </li>
-          <li class="__information-block">
-            <span class="__information-block__key">{{data.Info.system.key}}</span>
-            <span class="__information-block__value">{{data.Info.system.value}}</span>
-          </li>
-          <li class="__information-block">
-            <span class="__information-block__key">{{data.Info.gpu.key}}</span>
-            <span class="__information-block__value">{{data.Info.gpu.value}}</span>
-          </li>
-          <li class="__information-block">
-            <span class="__information-block__key">{{data.Info.plugin.key}}</span>
-            <span class="__information-block__value">{{data.Info.plugin.value}}</span>
-          </li>
-          <li class="__information-block">
-            <span class="__information-block__key">{{data.Info.adapter.key}}</span>
-            <span class="__information-block__value">{{data.Info.adapter.value}}</span>
-          </li>
-          <li class="__information-block">
-            <span class="__information-block__key">{{data.Info.account.key}}</span>
-            <span class="__information-block__value">{{data.Info.account.value}}</span>
-          </li>
-        </ul>
+        <div id="config_information">
+          <ul class="__information">
+            <li class="__information-block">
+              <span class="__information-block__key">{{data.Info.cpu.key}}</span>
+              <span class="__information-block__value">{{data.Info.cpu.value}}</span>
+            </li>
+            <li class="__information-block">
+              <span class="__information-block__key">{{data.Info.system.key}}</span>
+              <span class="__information-block__value">{{data.Info.system.value}}</span>
+            </li>
+            <li class="__information-block">
+              <span class="__information-block__key">{{data.Info.gpu.key}}</span>
+              <span class="__information-block__value">{{data.Info.gpu.value}}</span>
+            </li>
+            <li class="__information-block">
+              <span class="__information-block__key">{{data.Info.plugin.key}}</span>
+              <span class="__information-block__value">{{data.Info.plugin.value}}</span>
+            </li>
+            <li class="__information-block">
+              <span class="__information-block__key">{{data.Info.adapter.key}}</span>
+              <span class="__information-block__value">{{data.Info.adapter.value}}</span>
+            </li>
+            <li class="__information-block">
+              <span class="__information-block__key">{{data.Info.account.key}}</span>
+              <span class="__information-block__value">{{data.Info.account.value}}</span>
+            </li>
+            {{each data.Info.shell shell}}
+            <li class="__information-block">
+              <span class="__information-block__key">{{shell.name}}</span>
+              <span class="__information-block__value">{{shell.stdout}}</span>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
         <p class="__footer" id="config_footer">{{data.Runtime}}</p>
       </div>
     </div>
