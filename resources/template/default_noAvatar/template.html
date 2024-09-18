@@ -147,10 +147,10 @@
               <span class="__information-block__key">{{data.Info.account.key}}</span>
               <span class="__information-block__value">{{data.Info.account.value}}</span>
             </li>
-            {{each data.Info.shell shell}}
+            {{each data.Info.custom custom}}
             <li class="__information-block">
-              <span class="__information-block__key">{{shell.name}}</span>
-              <span class="__information-block__value">{{shell.stdout}}</span>
+              <span class="__information-block__key">{{custom.name}}</span>
+              <span class="__information-block__value">{{custom.stdout}}</span>
             </li>
             {{/each}}
           </ul>

@@ -44,29 +44,29 @@ export function supportGuoba() {
           },
         },
         {
-          field: "shell",
-          label: "自定义展示内容",
-          bottomHelpMessage: "自定义展示内容",
+          field: "custom",
+          label: "自定义内容",
+          bottomHelpMessage: "自定义内容",
           component: "GSubForm",
           componentProps: {
             multiple: true,
             schemas: [
               {
                 field: "name",
-                label: "自定义展示内容名",
+                label: "名称",
                 component: "Input",
                 required: true,
                 componentProps: {
-                  placeholder: '请输入展示内容名',
+                  placeholder: '例：系统名称',
                 },
               },
               {
                 field: "command",
-                label: "shell命令",
+                label: "命令",
                 component: "Input",
                 required: true,
                 componentProps: {
-                  placeholder: '请输入展示内容名',
+                  placeholder: '例：uname',
                 },
               },
             ],
