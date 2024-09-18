@@ -124,12 +124,27 @@
 }
 
 #background-page .__footer {
-  margin-top: 90px;
+  margin-top: 70px;
   font-family: "HachiMaruPop";
   font-size: 22px;
   text-align: right;
   color: #b7a89e;
   -webkit-text-stroke: 0.5px #b7a89e;
+}
+
+#logo {
+  display: flex;
+  flex-direction: row;
+  margin-top: -29px;
+  font-size: 27px;
+  font-weight: 550;
+  color: #b7a89e;
+}
+
+#logo>img {
+  width: 38px;
+  height: 38px;
+  margin: 0px 10px;
 }
 
 #config_information {
