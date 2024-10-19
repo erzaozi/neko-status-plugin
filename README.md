@@ -54,11 +54,78 @@ pnpm install --filter=neko-status-plugin
 - [x] 收发消息数量
 - [x] 好友 & 群数量
 - [x] 运行时间
+- [x] [自定义展示](https://github.com/erzaozi/neko-status-plugin?tab=readme-ov-file#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%95%E7%A4%BA)
 
 ## 效果图
 
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/b606dc41-5c7c-4199-b3da-04d96be27370" height="500" alt="renderings"/>
 <img src="https://github.com/erzaozi/neko-status-plugin/assets/61369914/cf0b837e-70fb-47e8-9805-5b1ed44f751c" height="500" alt="renderings"/>
+
+## 自定义展示
+
+如果你想自定义展示一些想看的内容，比如近期服务器负载情况，或服务器的 IP 地址等，可以按照以下步骤操作：
+
+1. 在锅巴的本插件配置面板中，展开 `自定义内容` 配置项，点击 `新增` 按钮
+   
+2. 填写 `名称` 和 `命令`，`名称` 可以随意填写，`命令` 的填写可以参考以下是两个经典的例子：
+
+   <details>
+   <summary>展示服务器公网IP</summary>
+   <br>
+
+   要查看服务器的 IP 地址，可以使用 `hostname` 命令，该命令将返回所有网络接口的 IP 地址，以空格分隔：
+
+   ```
+   144.93.144.203 5DBD:1EE5:0D88:B35F:FB27:7218:1047:8408 F5B5:7345:111D:4E03:759F:FAAD:D2C0:B95F
+   ```
+
+   我们希望仅提取第一个 IP 地址。可以使用以下命令：
+
+   **命令：**
+   ```bash
+   hostname -I | awk '{print $1}'
+   ```
+
+   **命令解析：**
+   1. `hostname -I`：获取所有网络接口的 IP 地址，以空格分隔
+   2. `awk '{print $1}'`：提取输出中的第一个 IP 地址
+
+   </details>
+
+   <details>
+   <summary>展示服务器负载</summary>
+   <br>
+
+   使用 `uptime` 命令可以查看服务器的负载情况。该命令返回的内容类似于以下文本：
+
+   ```
+   16:31:32 up 5 days, 22:52, 4 users, load average: 0.02, 0.01, 0.00
+   ```
+
+   这样展示的内容较多，我们希望仅提取负载值，并将其转换为百分比形式。因此，可以使用以下命令：
+
+   **命令：**
+   ```bash
+   uptime | awk -F'[:,]' '{printf "%.2f%% %.2f%% %.2f%%\n", ($8 * 100) / nproc, ($9 * 100) / nproc, ($10 * 100) / nproc}' nproc=$(nproc)
+   ```
+
+   **命令解析：**
+   1. `uptime`：获取系统当前的负载信息
+   2. `awk -F'[:,]'`：使用 `:` 和 `,` 作为输入分隔符进行解析
+   3. `printf`：格式化输出三个负载值（$8, $9, $10），相对于 CPU 核心数（通过 `nproc` 获取），并以百分比形式显示
+   4. `nproc=$(nproc)`：获取当前可用的 CPU 核心数
+
+   </details>
+
+
+3. 填写好 `名称` 和 `命令` 后，点击 `确定` 按钮，即可完成自定义内容的配置
+
+4. 如果想展示的内容无法通过一条命令获取，也可以自行编辑一个脚本文件，比如 `.bat` 或者 `.sh`，并使用命令调用它
+
+> [!NOTE]
+> 此功能依赖于 `exec` 命令，几乎可以实现所有信息的展示，包括调用已安装的软件或请求网络 API 接口。不过，由于它直接执行终端命令，请务必避免使用高风险命令，例如 `rm -rf /` 等。
+>
+> 在调用命令之前，建议在 Shell 或 Cmd 环境中进行测试，以确保输出符合预期。许多命令的输出可能较为详细，因此请尽量对输出进行处理，以确保美观。例如，上述例子中使用了 `awk` 进行格式化。
 
 ## 常见问题
 
