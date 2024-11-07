@@ -36,7 +36,7 @@ export async function getMemoryUsageCircle() {
             progress: info.mem.active / info.mem.total
         };
     } catch (error) {
-        console.error('获取内存圈形图信息时出错:', error);
+        logger.error('获取内存圈形图信息时出错:', error);
         return {
             text: "0 B / 0 B",
             progress: 0

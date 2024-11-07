@@ -21,7 +21,7 @@ export async function getGpuInfo() {
       value: gpuModel
     };
   } catch (error) {
-    console.error('获取GPU信息时出错:', error);
+    logger.error('获取GPU信息时出错:', error);
 
     return {
       key: 'GPU',

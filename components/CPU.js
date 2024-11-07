@@ -17,7 +17,7 @@ export async function getCpuLoadAndSpeed() {
       progress: info.currentLoad.currentLoad / 100
     };
   } catch (error) {
-    console.error('获取CPU信息时出错:', error);
+    logger.error('获取CPU信息时出错:', error);
     return {
       text: "0% (0GHz)",
       progress: 0
@@ -40,7 +40,7 @@ export async function getCpuModel() {
       value: cpus[0].model.length > 36 ? cpus[0].model.slice(0, 36) + '...' : cpus[0].model
     };
   } catch (error) {
-    console.error('获取CPU信息时出错:', error);
+    logger.error('获取CPU信息时出错:', error);
     return {
       key: 'CPU',
       value: "The Emperor's New CPU"

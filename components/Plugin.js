@@ -31,7 +31,7 @@ export function getPluginNumInfo() {
             value: `${pluginsCount} plugin & ${jsFilesCount} js loaded`
         };
     } catch (error) {
-        console.error('获取插件信息时出错:', error);
+        logger.error('获取插件信息时出错:', error);
         return {
             key: 'Plugins',
             value: "0 plugin & 0 js loaded"

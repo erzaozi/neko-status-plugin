@@ -112,7 +112,7 @@ async function isImageUrl(imageUrl) {
     const contentType = response.headers.get('content-type');
     return contentType && contentType.startsWith('image/');
   } catch (error) {
-    console.error('检查失败:', error);
+    logger.error('检查失败:', error);
     return false;
   }
 }

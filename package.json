@@ -1,6 +1,6 @@
 {
   "name": "neko-status-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "基于Yunzai-Bot的状态展示插件，可自定义头图",
   "main": "index.js",
   "scripts": {

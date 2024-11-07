@@ -42,7 +42,7 @@ export async function getDiskUsageCircle() {
         progress: disk.use / 100
       };
     } catch (error) {
-      console.error('获取磁盘信息时出错:', error);
+      logger.error('获取磁盘信息时出错:', error);
       return {
         text: "0 B / 0 B",
         progress: 0

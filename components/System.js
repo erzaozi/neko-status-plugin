@@ -15,7 +15,7 @@ export async function getSysInfo() {
       value: info.osInfo.distro.length > 36 ? info.osInfo.distro.slice(0, 36) + '...' : info.osInfo.distro
     };
   } catch (error) {
-    console.error('获取系统信息时出错:', error);
+    logger.error('获取系统信息时出错:', error);
     return {
       key: 'System',
       value: "The Emperor's New System"

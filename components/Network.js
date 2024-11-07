@@ -42,7 +42,7 @@ export async function getNetworkSpeed() {
       progress: primaryInterface.tx_sec / (primaryInterface.tx_sec + primaryInterface.rx_sec)
     };
   } catch (error) {
-    console.error('获取网络速度时出错:', error);
+    logger.error('获取网络速度时出错:', error);
     return {
         text: '↑ 0 B/s ↓ 0 B/s',
         progress: 0

@@ -8,9 +8,9 @@ export class neko_status extends plugin {
   constructor() {
     super({
       /** 功能名称 */
-      name: 'neko状态',
+      name: 'Neko状态',
       /** 功能描述 */
-      dsc: '获取neko状态',
+      dsc: '获取Neko状态',
       event: 'message',
       /** 优先级，数字越小等级越高 */
       priority: -1009,
