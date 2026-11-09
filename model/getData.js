@@ -72,7 +72,7 @@ export default new class getData {
         const bot = e.bot || Bot;
 
         const data = {
-            "BotVersion": Version.isMiao ? 'Miao-Yunzai' : Version.isTrss ? 'TRSS-Yunzai' : 'Yunzai',
+            "BotVersion": Version.isMangoCat ? 'MangoCat-Yunzai' : Version.isMiao ? 'Miao-Yunzai' : Version.isTrss ? 'TRSS-Yunzai' : 'Yunzai',
             "BotAvatar": bot.avatar || await bot.pickFriend(bot.uin).getAvatarUrl?.() || `https://q1.qlogo.cn/g?b=qq&s=0&nk=${bot.uin}`,
             "BotName": bot.nickname?.substring(0, 10) || 'Shizuku',
             "HeadImage": await this.getHeadImage(),
